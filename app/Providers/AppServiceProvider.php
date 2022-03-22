@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
 	{
 		\App\Models\User::observe(\App\Observers\UserObserver::class);
 		\App\Models\Topic::observe(\App\Observers\TopicObserver::class);
+		\App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
 
         // 设置 Laravel 分页使用 Bootstrap
         \Illuminate\Pagination\Paginator::useBootstrap();
