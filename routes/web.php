@@ -54,4 +54,4 @@ Route::post('topics/upload_image', 'TopicsController@uploadImage')->name('topics
 // 话题 - SEO 友好的URL 路由
 Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');
 
-Route::resource('replies', 'RepliesController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
