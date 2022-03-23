@@ -53,5 +53,7 @@ Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
 Route::post('topics/upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
 // 话题 - SEO 友好的URL 路由
 Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');
-
+// 回复话题相关路由
 Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
+// 消息通知相关路由
+Route::resource('notifications', 'NotificationsController', ['only' => ['index']]);
