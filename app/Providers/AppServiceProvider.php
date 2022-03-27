@@ -13,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // 在开发环境下加载 sudo-su 用户切换工具
+        if (app()->isLocal()) {
+            $this->app->register(\VIACreative\SudoSu\ServiceProvider::class);
+        }
     }
 
     /**
@@ -22,10 +25,10 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-	{
-		\App\Models\User::observe(\App\Observers\UserObserver::class);
-		\App\Models\Topic::observe(\App\Observers\TopicObserver::class);
-		\App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
+    {
+        \App\Models\User::observe(\App\Observers\UserObserver::class);
+        \App\Models\Topic::observe(\App\Observers\TopicObserver::class);
+        \App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
 
         // 设置 Laravel 分页使用 Bootstrap
         \Illuminate\Pagination\Paginator::useBootstrap();
