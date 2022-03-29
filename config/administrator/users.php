@@ -26,7 +26,7 @@ return [
             // 数据表格里列的名称，默认会使用【列标记】
             'title' => '头像',
 
-            // 默认情况下回直接输出数据，你也可以使用 output 选项来定制输出内容
+            // 默认情况下会直接输出数据，你也可以使用 output 选项来定制输出内容
             'output' => function ($avatar, $model) {
                 return empty($avatar) ? 'N/A' : '<img src="' . $avatar . '" width="40">';
             },
@@ -39,7 +39,7 @@ return [
             'title' => '用户名',
             'sortable' => false,
             'output' => function ($name, $model) {
-                return '<a href="/users/' . $model->id . '" target=_blank>' . $name . '</a>';
+                return '<a href="/users/' . $model->id . '" target="_blank">' . $name . '</a>';
             },
         ],
 
