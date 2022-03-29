@@ -87,7 +87,7 @@ return array(
      * The permission option is the highest-level authentication check that lets you define a closure that should return true if the current user
      * is allowed to view the admin section. Any "falsey" response will send the user back to the 'login_path' defined below.
      *
-     * 权限控制的回调函数。
+     * 权限控制的回调函数,这里是控制进入后台的权限。
      *
      * @type closure
      */
@@ -124,7 +124,7 @@ return array(
      *
      * @type string
      */
-    'home_page' => 'users',
+    'home_page' => 'topics',
 
     /*
      * The route to which the user will be taken when they click the "back to site" button
@@ -142,7 +142,7 @@ return array(
      *
      * @type string
      */
-    'login_path' => 'login',
+    'login_path' => 'permissions/denied', // 如: login
 
     /*
      * The logout path is the path where Administrator will send the user when they click the logout link

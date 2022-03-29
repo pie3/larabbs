@@ -15,7 +15,7 @@ return [
     // 设置当前页面的访问权限，通过返回布尔值来控制权限。
     // 返回 true 即通过权限验证，false 则无权访问并从 Menu 中隐藏
     'permission' => function () {
-        return Auth::user()->can('manage_contents');
+        return Auth::user()->can('manage_users');
     },
 
     // 字段负责渲染 【数据表格】，由无数的 【列】组成
